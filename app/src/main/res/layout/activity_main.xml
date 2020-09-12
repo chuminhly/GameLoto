@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <TextView
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:textColor="#ff20"
+        android:textSize="50dp"
+        android:gravity="center"
+        android:text="Số Ngẫu Nhiên"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/edtSoMin"
+        android:layout_marginTop="20dp"
+        android:maxLength="3"
+        android:textColor="#0022FF"
+        android:inputType="number"
+        android:gravity="left"
+        android:hint="Nhập Số Min"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/edtSoMax"
+        android:layout_marginTop="20dp"
+        android:inputType="number"
+        android:gravity="left"
+        android:hint="Nhập Số Max"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btnRandom"
+        android:layout_marginTop="20dp"
+        android:background="#FFC107"
+        android:textAllCaps="false"
+        android:text="Random"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tvResult"
+        android:text="1-2-3-4"
+        android:textSize="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>
