@@ -7,6 +7,7 @@
     android:orientation="vertical"
     android:layout_weight="9"
     tools:context=".MainActivity">
+
     <LinearLayout
         android:layout_weight="3"
         android:weightSum="3"
@@ -81,10 +82,22 @@
     </LinearLayout>
     <LinearLayout
         android:layout_weight="2"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <TextView
+            android:layout_weight="1"
             android:id="@+id/tvResult"
+            android:text=""
+            android:maxLines="10"
+            android:textSize="30dp"
+            android:requiresFadingEdge="vertical"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/tvResultRever"
             android:text=""
             android:maxLines="10"
             android:textSize="30dp"

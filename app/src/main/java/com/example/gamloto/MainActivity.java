@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -19,10 +21,11 @@ public class MainActivity extends AppCompatActivity {
 
     EditText mEdtSoMin, mEdtSoMax;
     Button mBtnRandom,mBtnReset,mbtnAddRang;
-    TextView mTvResult;
+    TextView mTvResult,mTvResultRevert;
     String mKetQua="";
 
     List<Integer> arrNum = new ArrayList<>();
+    List<Integer> arrNumOut = new ArrayList<>();
     int _SoMin = 0;
     int _SoMax = 0;
     int mIndex = -1;
@@ -37,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         //mTvResult = findViewById(R.id.tvResult);
         mTvResult= (TextView) findViewById(R.id.tvResult);
         mTvResult.setMovementMethod(new ScrollingMovementMethod());
+        mTvResultRevert = findViewById(R.id.tvResultRever);
 
         mbtnAddRang = findViewById(R.id.btnAddrang);
         mBtnReset = findViewById(R.id.btnReset);
@@ -85,10 +89,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mTvResult.setText("");
+                mTvResultRevert.setText("");
                 disableView(mBtnRandom);
                 enableView(mbtnAddRang);
                 enableView(mEdtSoMax);
                 enableView(mEdtSoMin);
+                arrNum.clear();
+                arrNumOut.clear();
+                mKetQua ="";
             }
         });
 
@@ -103,13 +111,21 @@ public class MainActivity extends AppCompatActivity {
                     mIndex = random.nextInt(arrNum.size());
                     Result = arrNum.get(mIndex);
                     // Sử dụng mảng hiện tại còn những số nào chưa được lấy ra và Số lấy ra chạy từng bước
-                    mKetQua += arrNum.toString()+":"+ String.valueOf(Result) + "\n";
+                  //  mKetQua += arrNum.toString()+":"+ String.valueOf(Result) + "\n";
                     // Sử dụng nguyên thủy theo từng giá trị trong mảng và có dấu - từng số.
                    // mKetQua += arrNum.size()!=1? Result + "-":Result;
+                    mKetQua = ((arrNum.size()!=1)? "-" + Result: Result)+ mKetQua;
+                    // || arrNum.size()!=_SoMax-_SoMin
                     // sử dụng phương thức so sánh nếu chỉ còn 1 phần tử thì bỏ đi dấu - ở cuối
                     //arrNum.toString()+":"+ String.valueOf(Result) + "\n";
-                    mTvResult.setText(mKetQua);
+                    arrNumOut.add(0,Result);
+
                     arrNum.remove(mIndex);
+                    mTvResult.setText(mKetQua);
+                   // mTvResult.setText(arrNumOut.toString());
+                  //  Collections.reverse(arrNumOut);
+                    mTvResultRevert.setText(arrNumOut.toString());
+
                 }
                 else
                     {
