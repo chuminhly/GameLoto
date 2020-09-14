@@ -5,74 +5,93 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_weight="9"
     tools:context=".MainActivity">
-    <TextView
-        android:layout_marginTop="30dp"
-        android:textStyle="bold"
-        android:textColor="#ff20"
-        android:textSize="50dp"
-        android:gravity="center"
-        android:text="Số Ngẫu Nhiên"
+    <LinearLayout
+        android:layout_weight="3"
+        android:weightSum="3"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="#ff20"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:text="Số Ngẫu Nhiên"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:layout_weight="1"
+            android:id="@+id/edtSoMin"
+            android:maxLength="5"
+            android:textColor="#0022FF"
+            android:inputType="number"
+            android:gravity="left"
+            android:hint="Nhập Số Min"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:layout_weight="1"
+            android:id="@+id/edtSoMax"
+            android:inputType="number"
+            android:gravity="left"
+            android:hint="Nhập Số Max"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="4"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/btnAddrang"
+            android:layout_marginTop="20dp"
+            android:background="#FFC107"
+            android:textAllCaps="false"
+            android:text="Add Range"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/btnReset"
+            android:layout_marginTop="20dp"
+            android:background="#00BCD4"
+            android:textAllCaps="false"
+            android:text="Reset"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/btnRandom"
+            android:layout_marginTop="20dp"
+            android:background="#FF5722"
+            android:textAllCaps="false"
 
-    <EditText
-        android:id="@+id/edtSoMin"
-        android:layout_marginTop="20dp"
-        android:maxLength="3"
-        android:textColor="#0022FF"
-        android:inputType="number"
-        android:gravity="left"
-        android:hint="Nhập Số Min"
+            android:text="Random"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:id="@+id/edtSoMax"
-        android:layout_marginTop="20dp"
-        android:inputType="number"
-        android:gravity="left"
-        android:hint="Nhập Số Max"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:id="@+id/btnAddrang"
-        android:layout_marginTop="20dp"
-        android:background="#FFC107"
-        android:textAllCaps="false"
-        android:text="Add range"
-        android:textSize="20dp"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:id="@+id/btnReset"
-        android:layout_marginTop="20dp"
-        android:background="#FFC107"
-        android:textAllCaps="false"
-        android:text="Reset"
-        android:textSize="20dp"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:id="@+id/btnRandom"
-        android:layout_marginTop="20dp"
-        android:background="#FFC107"
-        android:textAllCaps="false"
-        android:text="Random"
-        android:textSize="20dp"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent">
         <TextView
             android:id="@+id/tvResult"
             android:text=""
-            android:maxLines="5"
+            android:maxLines="10"
             android:textSize="30dp"
             android:requiresFadingEdge="vertical"
             android:scrollbars="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
-
+    </LinearLayout>
 
 </LinearLayout>
