@@ -11,7 +11,9 @@
     <LinearLayout
         android:layout_weight="3"
         android:weightSum="3"
+        android:layout_margin="5dp"
         android:orientation="vertical"
+        android:background="@drawable/layout_border"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <TextView
@@ -41,11 +43,14 @@
             android:hint="Nhập Số Max"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+
     </LinearLayout>
     <LinearLayout
         android:layout_weight="4"
         android:orientation="horizontal"
         android:weightSum="3"
+        android:layout_margin="5dp"
+        android:background="@drawable/layout_border"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <Button
@@ -74,7 +79,6 @@
             android:layout_marginTop="20dp"
             android:background="#FF5722"
             android:textAllCaps="false"
-
             android:text="Random"
             android:textSize="20dp"
             android:layout_width="wrap_content"
@@ -83,22 +87,27 @@
     <LinearLayout
         android:layout_weight="2"
         android:orientation="vertical"
+        android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <TextView
             android:layout_weight="1"
             android:id="@+id/tvResult"
             android:text=""
+            android:background="@drawable/layout_border"
             android:maxLines="10"
             android:textSize="30dp"
+            android:layout_margin="5dp"
             android:requiresFadingEdge="vertical"
             android:scrollbars="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
         <TextView
             android:layout_weight="1"
+            android:background="@drawable/layout_border"
             android:id="@+id/tvResultRever"
             android:text=""
+            android:layout_margin="5dp"
             android:maxLines="10"
             android:textSize="30dp"
             android:requiresFadingEdge="vertical"

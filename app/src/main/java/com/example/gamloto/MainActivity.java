@@ -125,7 +125,6 @@ public class MainActivity extends AppCompatActivity {
                    // mTvResult.setText(arrNumOut.toString());
                   //  Collections.reverse(arrNumOut);
                     mTvResultRevert.setText(arrNumOut.toString());
-
                 }
                 else
                     {
