@@ -43,6 +43,14 @@
             android:hint="Nhập Số Max"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+        <EditText
+            android:layout_weight="1"
+            android:id="@+id/editFindPostion"
+            android:inputType="number"
+            android:gravity="left"
+            android:hint="Nhập Số Cần Tìm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
     <LinearLayout
@@ -83,6 +91,16 @@
             android:textSize="20dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"/>
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/btnFindNumber"
+            android:layout_marginTop="20dp"
+            android:background="#2196F3"
+            android:textAllCaps="false"
+            android:text="Find"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
     </LinearLayout>
     <LinearLayout
         android:layout_weight="2"
@@ -106,6 +124,18 @@
             android:layout_weight="1"
             android:background="@drawable/layout_border"
             android:id="@+id/tvResultRever"
+            android:text=""
+            android:layout_margin="5dp"
+            android:maxLines="10"
+            android:textSize="30dp"
+            android:requiresFadingEdge="vertical"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:layout_weight="1"
+            android:background="@drawable/layout_border"
+            android:id="@+id/tvResultFindNumber"
             android:text=""
             android:layout_margin="5dp"
             android:maxLines="10"

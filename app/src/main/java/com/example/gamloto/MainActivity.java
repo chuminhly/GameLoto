@@ -19,9 +19,9 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText mEdtSoMin, mEdtSoMax;
-    Button mBtnRandom,mBtnReset,mbtnAddRang;
-    TextView mTvResult,mTvResultRevert;
+    EditText mEdtSoMin, mEdtSoMax,mEdtFindNumber;
+    Button mBtnRandom,mBtnReset,mbtnAddRang, mBtnFindNumber;
+    TextView mTvResult,mTvResultRevert,mTvResultFindNumber;
     String mKetQua="";
 
     List<Integer> arrNum = new ArrayList<>();
@@ -37,10 +37,17 @@ public class MainActivity extends AppCompatActivity {
         mEdtSoMin = findViewById(R.id.edtSoMin);
         mEdtSoMax = findViewById(R.id.edtSoMax);
         mBtnRandom = findViewById(R.id.btnRandom);
+
+        mBtnFindNumber = findViewById(R.id.btnFindNumber);
+        mEdtFindNumber = findViewById(R.id.editFindPostion);
+
         //mTvResult = findViewById(R.id.tvResult);
         mTvResult= (TextView) findViewById(R.id.tvResult);
         mTvResult.setMovementMethod(new ScrollingMovementMethod());
+
         mTvResultRevert = findViewById(R.id.tvResultRever);
+
+        mTvResultFindNumber = findViewById(R.id.tvResultFindNumber);
 
         mbtnAddRang = findViewById(R.id.btnAddrang);
         mBtnReset = findViewById(R.id.btnReset);
@@ -129,6 +136,33 @@ public class MainActivity extends AppCompatActivity {
                 else
                     {
                     Toast.makeText(MainActivity.this,"Hết Giá trị Random",Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
+        mBtnFindNumber.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+               String _tFN =  mEdtFindNumber.getText().toString();
+                if (_tFN.equals(""))
+                {
+                    Toast.makeText(MainActivity.this,"Vui lòng nhập số cần tìm ",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (arrNumOut.contains(Integer.parseInt(_tFN)))
+                {
+                    //Toast.makeText(MainActivity.this,"Có giá Key",Toast.LENGTH_SHORT).show();
+                    int _postion = arrNumOut.indexOf(Integer.parseInt(_tFN));
+
+                    mTvResultFindNumber.setText(String.valueOf(_postion));
+                }
+                else
+                {
+                    Toast.makeText(MainActivity.this,"Not value",Toast.LENGTH_SHORT).show();
                 }
 
             }
